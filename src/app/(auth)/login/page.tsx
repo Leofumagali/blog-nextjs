@@ -22,11 +22,11 @@ export default function Login() {
         path: "/",
       });
 
-      console.log("Login realizado com sucesso!");
+      console.log("Successfully logged in!");
 
       router.push("/");
     } catch (err) {
-      setError("Erro ao fazer login. Verifique suas credenciais.");
+      setError("Login failed. Check your credentials.");
       console.log(err)
     }
   };
@@ -57,7 +57,7 @@ export default function Login() {
 
         <div className="mb-6">
           <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-            Senha
+            Password
           </label>
           <input
             id="password"
@@ -72,18 +72,18 @@ export default function Login() {
           onClick={handleLogin}
           className="mb-4 w-full px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
         >
-          Entrar
+          Login
         </button>
 
         <p className="mb-1 text-center">
-          Não possui uma conta?
+          Don't have an account?
         </p>
 
         <button
           onClick={() => router.push("/register")}
           className="w-full px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
         >
-          Registrar
+          Sign up
         </button>
       </div>
     </div>

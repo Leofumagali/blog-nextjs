@@ -14,16 +14,16 @@ export default function Register() {
 
   const handleRegister = async () => {
     if (password !== confirmPassword) {
-      setError("As senhas não coincidem.");
+      setError("Passwords do not match.");
       return;
     }
 
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      alert("Conta criada com sucesso!");
+      alert("Account successfully created!");
       router.push("/login");
     } catch (err) {
-      setError("Erro ao registrar: " + (err as Error).message);
+      setError("Registration failed: " + (err as Error).message);
     }
   };
 
@@ -31,7 +31,7 @@ export default function Register() {
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-sm p-6 bg-white rounded-lg shadow-md">
         <h1 className="text-2xl font-bold text-center text-gray-700 mb-6">
-          Criar Conta
+          Sign up
         </h1>
 
         {error && (
@@ -55,7 +55,7 @@ export default function Register() {
 
         <div className="mb-4">
           <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-            Senha
+            Password
           </label>
           <input
             id="password"
@@ -68,7 +68,7 @@ export default function Register() {
 
         <div className="mb-6">
           <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
-            Confirmar Senha
+            Confirm password
           </label>
           <input
             id="confirmPassword"
@@ -83,11 +83,11 @@ export default function Register() {
           onClick={handleRegister}
           className="mb-4 w-full px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
         >
-          Registrar
+          Sign up
         </button>
 
         <p className="mb-1 text-center">
-          Já possui uma conta?
+          Already have an account?
         </p>
         <button
           onClick={() => router.push("/login")}
